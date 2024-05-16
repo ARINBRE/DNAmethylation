@@ -1,0 +1,33 @@
+# https://portal.hpc.uams.edu/pun/sys/dashboard 
+# open clusters/Grace Shell Access
+# Run the following command to switch your conda from a personal install to the global install of conda maintained by the HPC staff:
+
+/opt/conda/bin/conda init bash
+
+# check what conda you are running. It should look like /opt/conda/bin/conda
+
+which conda
+
+# If you have not created an environment run the following
+
+conda create -n test_env
+
+# add the /home/SE/BINF-CORE/appl_sys_bio environment to your /home/.conda/environments.txt file
+
+conda config --append envs_dirs /home/SE/BINF-CORE/
+
+# echo is not working
+#echo "/home/SE/BINF-CORE/appl_sys_bio" >> /home/{YOUR_USERNAME_HERE}/.conda/environments.txt 
+
+# check if the path as been added to your environments.txt file
+
+cat /home/{YOUR_USERNAME}/.conda/environments.txt 
+
+# if it is not added to your environments.txt, send me a message and we can edit the file with Vi. 
+
+# create a Jupyter Lab request using the on demand portal
+# Select the R notebook
+# in the top right corner, click on "R"
+# select the R environment with [appl_sys_bio] in the name. 
+
+# Use WinSCP or Filezilla to upload files to your home directory in GRACE.
