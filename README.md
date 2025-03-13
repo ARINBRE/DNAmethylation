@@ -11,7 +11,7 @@ and is associated with a number of key processes including genomic imprinting, X
 Illumina’s Infinium BeadChips have provided a popular, user-friendly, and affordable alternative to whole-genome bisulfate sequencing (WGBS). Like WGBS this technology is based on sodium bisulphite conversion of DNA, but with subsequent single base resolution genotyping of targeted CpG sites using probes on a microarray. For each methylation locus, two signals of interest are recorded: One signal measures the amount of methylated DNA (Meth), and the other measures the amount of unmethylated DNA (Unmeth). The proportion Meth/(Unmeth+Meth) is the methylation ratio (referred to as β) in the population of cells from which the DNA was extracted. This proportion is used for downstream analysis.
 
 ## Setup and Installation
-The module was conducted using R version 4.1.2 in a Jupyter Notebook with an R kernel. The associated Anaconda environment for the Jupyter Notebook is provided in file environment.yaml. If you use R, ensure the proper version is installed on your machine along with the required libraries. Ti install Bioconductor packages, packge **Biocmanager** is required. You can install it using the following line:
+The module was conducted using R version 4.1.2 in a Jupyter Notebook with an R kernel. The associated Anaconda environment for the Jupyter Notebook is provided in file environment.yaml. If you use R, ensure the proper version is installed on your machine along with the required libraries. To install Bioconductor packages, packge **BiocManager** is required. You can install it using the following line:
 
 ```R
 if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
@@ -27,7 +27,7 @@ if (!requireNamespace("IlluminaHumanMethylation450kanno.ilmn12.hg19", quietly = 
 if (!requireNamespace("limma", quietly = TRUE)) BiocManager::install("limma")
 ```
 
-If you prefer to work with EndNote, import the yaml environment file into your anaconda and install R packages as shown above. Alternatively, you can create your own conda environment. For example:
+If you prefer to work with Jupyter Notebook, import the yaml environment file into your anaconda and install R packages as shown above. Alternatively, you can create your own conda environment. For example:
 ```
 conda create -n r_env r-base=4.1.2 r-essentials -y
 ```
@@ -37,8 +37,9 @@ conda activate r_env
 R -e "install.packages('IRkernel'); IRkernel::installspec(user = FALSE)"
 ```
 
-Installing some packages that serve as dependencies directly from R using install.packages may be problematic. Installing specific versions of R packages from conda will likely resolve this issue. Some examples of problematic packages are shown below:
+Installing some packages that serve as dependencies directly from R using install.packages("package_name") may be problematic. Installing specific versions of R packages from conda after activating your environment will likely resolve this issue. Some examples of problematic packages are shown below:
 ```
+conda activate r_env
 conda install -c r r-Matrix=1.5-4
 conda install -c r r-matrixStats=0.62.0
 conda install -c r r-locfit=1.5-9.6
