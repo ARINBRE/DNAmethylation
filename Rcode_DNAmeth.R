@@ -3,6 +3,7 @@
 # Omnibus public repository, preprocess the data, perform differential methylation
 # analysis, and generate plots to visualize the results.
 # This tutorial assumed that R has been already installed.
+rm(list=ls())
 
 # First, install package BiocManager which enables installing Bioconductor packages 
 # if it has not been already installed 
@@ -105,4 +106,4 @@ xlab=paste("PC1 (", round(100*pc1, 2), "%)", sep=""),
 ylab=paste("PC2 (", round(100*pc2, 2), "%)", sep=""))
 legend("bottomleft", legend=c("Benign","Tumor"), col=c("green","red"), pch=c(16,17), pt.cex=1.5)
 
-
+sessionInfo()
